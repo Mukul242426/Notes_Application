@@ -16,6 +16,16 @@
   background-color: #e8e8e8;
 }
 
+.another-btn{
+  display: none;
+  
+}
+
+.back-btn{
+  width:2rem;
+  height: 2rem;
+}
+
 .notes-pic {
   border: 1px solid transparent;
   border-radius: 50%;
@@ -140,5 +150,33 @@
 
   .shown{
     width:100vw;
+  }
+
+  .another-btn{
+    display: flex;
+    align-items: center;
+  }
+
+  .first-coloumn{
+    width: 30%;
+  }
+
+  .second-coloumn{
+    width: 70%;
+  }
+
+  .notespart-two{
+    height: 75vh;
+    padding-left: 1.5rem;
+  }
+
+  .notespart-three{
+    height: 25vh;
+  }
+
+  .submit-btn{
+    bottom: 16%;
+    right: 8%;
+
   }
 }

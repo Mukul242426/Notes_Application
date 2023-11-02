@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../Styling/Notes.css";
 import Arrow from "../assets/Arrow.png";
+import Back from "../assets/Back.png"
 
-function Notes({ selectedGroup }) {
+function Notes({ selectedGroup,setSelectedGroup }) {
 
 // localStorage.clear();
 
@@ -24,18 +25,18 @@ function Notes({ selectedGroup }) {
   },[notes])
 
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
     "June",
     "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
   ];
 
   const getCurrentDate = () => {
@@ -63,13 +64,14 @@ function Notes({ selectedGroup }) {
   };
 
   const handleClick = () => {
-    if (text.length > 0) {
+    const updatedText=text.trim();
+    if (updatedText.length > 0) {
       const current_date = getCurrentDate();
       const current_time = getCurrentTime();
       const obj = {
         time: current_time,
         date: current_date,
-        content: text,
+        content: updatedText
       };
       setNotes([...notes,obj]);
       setText("");
@@ -79,6 +81,9 @@ function Notes({ selectedGroup }) {
   return (
     <div className={selectedGroup===undefined?'notes hidden':'notes shown'}>
       <div className="notespart-one">
+      <div className="another-btn" onClick={()=>setSelectedGroup()}>
+      <img src={Back} alt="Go-Back" className="back-btn"/>
+      </div>
         <div
           className="notes-pic"
           style={{ backgroundColor: selectedGroup.colour }}

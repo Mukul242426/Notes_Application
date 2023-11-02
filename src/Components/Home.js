@@ -55,6 +55,7 @@ function Home() {
       localStorage.setItem("createdGroups", JSON.stringify([obj, ...group]));
       setGroup(JSON.parse(localStorage.getItem("createdGroups")));
       setSelectedGroup();
+      setSelectedColor({...selectedColor,id:0,colored:""});
     }
   };
 
@@ -82,7 +83,7 @@ function Home() {
           {selectedGroup === undefined ? (
             <Default />
           ) : (
-            <Notes key={selectedGroup.id} selectedGroup={selectedGroup} />
+            <Notes key={selectedGroup.id} selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup} />
           )}
           {/* <Default /> */}
           {/* <div className='first'>

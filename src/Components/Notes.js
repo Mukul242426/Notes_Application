@@ -53,11 +53,16 @@ function Notes({ selectedGroup,setSelectedGroup }) {
     let minute =
       date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
     let meridien = "";
-    if (hour > 12) {
+    if (hour >= 12) {
       hour = hour % 12;
       meridien = "PM";
     } else {
       meridien = "AM";
+    }
+
+    if(hour===0)
+    {
+      hour=12;
     }
 
     return `${hour}:${minute} ${meridien}`;
@@ -109,6 +114,7 @@ function Notes({ selectedGroup,setSelectedGroup }) {
           placeholder="Enter your text here..........."
           value={text}
           onChange={(event) => setText(event.target.value)}
+          onKeyDown={(event)=>event.key==='Enter'?handleClick():''}
         />
 
         <div className="submit-btn" onClick={handleClick}>

@@ -159,19 +159,26 @@
 
   .first-coloumn{
     width: 30%;
+    font-size: 0.8rem;
+    line-height: 80%;
   }
 
   .second-coloumn{
     width: 70%;
+    font-size: 0.8rem;
   }
 
   .notespart-two{
-    height: 75vh;
+    height: 80vh;
     padding-left: 1.5rem;
   }
 
   .notespart-three{
-    height: 25vh;
+    height: 20vh;
+  }
+
+  .text-area{
+    font-size: 1rem;
   }
 
   .submit-btn{

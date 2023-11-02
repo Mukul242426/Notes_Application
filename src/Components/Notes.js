@@ -114,7 +114,13 @@ function Notes({ selectedGroup,setSelectedGroup }) {
           placeholder="Enter your text here..........."
           value={text}
           onChange={(event) => setText(event.target.value)}
-          onKeyDown={(event)=>event.key==='Enter'?handleClick():''}
+          onKeyDown={(event)=>{
+            if(event.key==='Enter' && !event.shiftKey)
+            {
+              event.preventDefault();
+              handleClick();
+            }
+          }}
         />
 
         <div className="submit-btn" onClick={handleClick}>

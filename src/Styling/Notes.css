@@ -22,8 +22,8 @@
 }
 
 .back-btn{
-  width:2rem;
-  height: 2rem;
+  width:1.5rem;
+  height: 1.5rem;
 }
 
 .notes-pic {
@@ -184,6 +184,13 @@
   .submit-btn{
     bottom: 16%;
     right: 8%;
+  }
 
+  .notespart-one{
+    gap:1.5rem;
+  }
+
+  .notes-title{
+    font-size: 1.1rem;
   }
 }
